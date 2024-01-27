@@ -8,7 +8,7 @@ const Logo = () => {
 
   return (
     <Image
-      alt="logo className="
+      alt="logo"
       className="hidden md:block cursor-pointer"
       height="100"
       width="100"
