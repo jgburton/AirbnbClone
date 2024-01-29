@@ -142,7 +142,9 @@ const Modal: React.FC<ModalProps> = ({
                                     left-9
                                 "
                 >
-                  <IoMdClose size={18} />
+                  <div className="hover:bg-slate-100 rounded-full p-2">
+                    <IoMdClose size={18} />
+                  </div>
                 </button>
                 <div className="text-lg font-semibold">{title}</div>
               </div>
@@ -173,6 +175,7 @@ const Modal: React.FC<ModalProps> = ({
                     label={actionLabel}
                   />
                 </div>
+                {footer}
               </div>
             </div>
           </div>
