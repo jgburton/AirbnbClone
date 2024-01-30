@@ -16,7 +16,8 @@ import { MdOutlineVilla } from "react-icons/md";
 import { FaSkiing } from "react-icons/fa";
 import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
-import CategoryBox from "../CategoryBox";
+import CategoryBox from "../CategoryBox";  
+import { useSearchParams, usePathname } from "next/navigation";
 
 export const categories = [
   {
@@ -97,6 +98,13 @@ export const categories = [
 ];
 
 const Categories = () => {
+    const params = useSearchParams();
+    const category = params?.get('category');
+    const pathname = usePathname();
+
+    const isMainPage = pathname === '/';
+
+
   return (
     <Container>
       <div
@@ -109,8 +117,8 @@ const Categories = () => {
          overflow-x-auto
         "
       >
-        {categories.map(({ label, description, icon }) => (
-          <CategoryBox key={label} label={label} icon={icon} />
+        {categories.map(({ label, icon }) => (
+          <CategoryBox key={label} label={label} icon={icon} selected={category === label} />
         ))}
       </div>
     </Container>
