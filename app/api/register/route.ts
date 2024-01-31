@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 
-import prisma from "@/app/libs/prismadb";
+import prisma from "../../../app/libs/pismadb";
 
 export async function POST(
-  request: Request, 
+  request: Request 
 ) {
   const body = await request.json();
   const { 
