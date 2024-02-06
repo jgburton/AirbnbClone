@@ -104,7 +104,6 @@ const Categories = () => {
 
     const isMainPage = pathname === '/';
 
-
   return (
     <Container>
       <div
