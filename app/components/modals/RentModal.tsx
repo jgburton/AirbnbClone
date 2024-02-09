@@ -47,6 +47,7 @@ const RentModal = () => {
   const category = watch("category");
   const location = watch("location");
 
+  //ensure map component re-renders and is dynamically imported only when location changes
   const Map = useMemo(
     () =>
       dynamic(() => import("../Map"), {
